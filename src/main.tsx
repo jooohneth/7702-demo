@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./style/index.css";
 
-import { PrivyProvider, PrivyClientConfig } from "@privy-io/react-auth";
+import { PrivyProvider, PrivyProviderProps } from "@privy-io/react-auth";
 import { Toaster } from "@/components/ui/sonner";
 
 if (!import.meta.env.VITE_PRIVY_APP_ID) {
@@ -21,10 +21,7 @@ export const privyConfig = {
 };
 
 createRoot(document.getElementById("root")!).render(
-  <PrivyProvider
-    appId={privyConfig.appId}
-    config={privyConfig.config as PrivyClientConfig}
-  >
+  <PrivyProvider {...(privyConfig as PrivyProviderProps)}>
     <App />
     <Toaster />
   </PrivyProvider>
