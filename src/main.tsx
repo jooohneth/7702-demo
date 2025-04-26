@@ -10,6 +10,6 @@ import Providers from "./lib/providers";
 createRoot(document.getElementById("root")!).render(
   <Providers>
     <App />
-    <Toaster richColors duration={1500} position="top-center" />
+    <Toaster />
   </Providers>
 );

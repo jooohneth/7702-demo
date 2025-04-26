@@ -1,15 +1,9 @@
-import { http, createConfig } from "wagmi";
-import { sepolia } from "wagmi/chains";
-
-export const config = createConfig({
-  chains: [sepolia],
-  transports: {
-    [sepolia.id]: http(),
-  },
-});
+if (!import.meta.env.VITE_PRIVY_APP_ID) {
+  throw new Error("VITE_PRIVY_APP_ID is not set in the environment variables.");
+}
 
 export const privyConfig = {
-  appId: "cm9rkudbi04ywjx0mpmp51h4n",
+  appId: import.meta.env.VITE_PRIVY_APP_ID,
   config: {
     embeddedWallets: {
       showWalletUIs: false,

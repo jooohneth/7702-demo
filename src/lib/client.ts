@@ -3,7 +3,6 @@ import { createPublicClient, createWalletClient, http } from "viem";
 import { sepolia } from "viem/chains";
 import { eip5792Actions } from "viem/experimental";
 
-// Read private key from environment variable
 const relayPrivateKey = import.meta.env.VITE_RELAY_PRIVATE_KEY;
 
 if (!relayPrivateKey) {
