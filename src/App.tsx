@@ -1,13 +1,12 @@
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import mantle from "/mantle.svg";
 import "./style/App.css";
 
-import { useEffect, useState } from "react";
-
-import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-
-import { publicClient, relayClient } from "./lib/client";
-import { MNTContract, DelegateContract } from "./lib/contract";
+import { publicClient, relayClient } from "@/lib/client";
+import { MNTContract, DelegateContract } from "@/lib/contract";
+import { formatHex, linkExplorer } from "@/lib/utils";
 
 import {
   encodeFunctionData,
@@ -30,8 +29,6 @@ import {
   useSignAuthorization,
   ConnectedWallet,
 } from "@privy-io/react-auth";
-
-import { formatHex, linkExplorer } from "@/lib/utils";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
