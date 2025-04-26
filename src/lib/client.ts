@@ -11,13 +11,6 @@ if (!relayPrivateKey) {
   );
 }
 
-export const relayClient = createWalletClient({
-  account: privateKeyToAccount(relayPrivateKey as `0x${string}`),
-  transport: http(),
-  chain: sepolia,
-}).extend(eip5792Actions());
-
-export const publicClient = createPublicClient({
-  chain: sepolia,
-  transport: http(),
-});
+// TODO: Add relayClient and publicClient
+export const relayClient = null;
+export const publicClient = null;

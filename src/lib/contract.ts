@@ -25,7 +25,7 @@ export const MNTContract = {
 };
 
 export const DelegateContract = {
-  address: "0xF98F5336b4a6fdcD4bB620e00cF66Ef8101949E1",
+  address: "", // TODO: Add implementation contract's address
   abi: [
     { type: "fallback", stateMutability: "payable" },
     { type: "receive", stateMutability: "payable" },
